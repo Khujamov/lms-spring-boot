@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Page</title>
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card">
+                <div class="card-header">
+                    Contacts
+                </div>
+                <div class="card-body">
+                    <button type="button"
+                            class="btn btn-info mb-2"
+                            id="btnOpenModal">
+                        Add
+                    </button>
+                    <button type="button"
+                            class="btn btn-warning mb-2 float-right"
+                            id="logout">
+                        Logout
+                    </button>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Phone number</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="contactList" th:each="book : ${books}">
+                            <tr th:text="${book.id}"/>
+                            <tr th:text="${book.name}"/>
+                            <tr th:text="${book.isbn}"/>
+                            <tr th:text="${book.nop}"/>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

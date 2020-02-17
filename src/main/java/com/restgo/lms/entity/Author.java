@@ -13,6 +13,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "author")
 public class Author  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

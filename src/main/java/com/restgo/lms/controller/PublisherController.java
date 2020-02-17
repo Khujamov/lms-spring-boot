@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PublisherController {
 
-    @Autowired
-    private PublisherService service;
+    private final PublisherService service;
+
+    public PublisherController(PublisherService service) {
+        this.service = service;
+    }
 
     @GetMapping("/publisher")
     public String getPublishers(Model model){

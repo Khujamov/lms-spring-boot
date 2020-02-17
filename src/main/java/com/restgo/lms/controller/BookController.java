@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BookController {
 
-    @Autowired
-    private BookService service;
+    private final BookService service;
 
+    // constructor-based injection
+    public BookController(BookService service) {
+        this.service = service;
+    }
 
     @GetMapping("/book")
     public String getBooks(Model model){
